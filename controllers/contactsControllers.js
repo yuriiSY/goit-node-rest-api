@@ -46,10 +46,6 @@ export const deleteContact = async (req, res, next) => {
 export const createContact = async (req, res, next) => {
   try {
     const body = req.body;
-    // const { error } = createContactSchema.validate(body);
-    // if (error) {
-    //   throw HttpError(400, error.message);
-    // }
     const result = await contactsService.addContact(body);
     res.status(201).json(result);
   } catch (error) {
